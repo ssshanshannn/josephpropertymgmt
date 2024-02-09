@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joseph Property Management Inc.</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" type="text/css" href="./icofont/icofont.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        header h1 {
+            color: white;
+            text-decoration: none;
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        nav {
+            background-color: #444;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .houses-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: stretch;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            overflow: hidden;
+        }
+
+        .house-listing {
+            display: flex;
+            flex-direction: column;
+            width: calc(25% - 15px);
+            margin: 10px 0;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .house-img {
+            width: 315px;
+            height: 250px;
+            background-position: center;
+            background-size: cover;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            overflow: hidden;
+        }
+
+        .house-details {
+            padding: 10px;
+            flex-grow: 1;
+        }
+
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        input,
+        textarea,
+        button {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #333;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        .arrow {
+            cursor: pointer;
+            /* position: absolute; */
+            /* top: 50%; */
+            /* transform: translateY(-50%); */
+            font-size: 24px;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+
+        }
+
+        .arrow.left {
+            left: 10px;
+        }
+
+        .arrow.right {
+            right: 10px;
+        }
+
+        .team-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: stretch;
+            margin-top: 20px;
+        }
+    
+        .team-member {
+            text-align: center;
+            width: 18%;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 10px 0;
+        }
+    
+        .team-member img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 1px solid #ddd;
+        }
+    
+        .team-member h3,
+        .team-member p {
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Joseph Property Management Inc.</h1>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#properties">Properties</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="home">
+        <h2>Welcome to Joseph Property Management Inc.</h2>
+        <p></p>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <p>Established in 2015, our property management company has been dedicated to providing top-notch real estate
+            management services
+            in the vibrant KW area. With a deep understanding of the local market and extensive industry experience, we
+            have always adhered to a customer-centric approach, continuously improving our service quality and
+            efficiency.
+            Our range of services includes, but is not limited to, property maintenance, lease management, financial
+            planning, and legal consultation. Our team of professionals is equipped with a wealth of experience,
+            offering tailor-made solutions to ensure our clients' properties are managed effectively and efficiently.
+        </p>
+        <p><b>Effortless Property Management for Investors</b></p>
+        <p>As a landlord, entrusting your property ensures meticulous maintenance and profitability with professionals.
+            Our team provides care and attention, giving you freedom to expand your portfolio without daily hassles.</p>
+        <p><b>Why Choose Us?</b></p>
+        <p>Our property management is committed to excellence, reliability, and personalized care. We stand out with
+            attention to detail, seasoned professionals, transparent communication, and a track record of satisfied
+            clients.</p>
+        <p><b>Cost Structure</b></p>
+        <p>Opting for our services comes with a competitive 10% commission covering tenant screening, maintenance,
+            repairs, and rental income optimization. Transparent pricing maximizes returns and ensures the highest
+            standards of property care.</p>
+    </section>
+
+    <section id="properties">
+        <h2>Properties</h2>
+        <div class="houses-container">
+            <div class="house-listing">
+                <button class="arrow prev one">&lt;</button>
+                <img src="./figure/h1/original-BF9EA5ED-4E0C-4CF4-893D-56CC1C659778.jpeg" alt="House 1"
+                    class="house-img one">
+                <button class="arrow next one">&gt;</button>
+                <div class="house-details">
+                    <h3>Helena Feasby St Kitchener</h3>
+                    <p><i class="icofont-bed"></i> X beds</p>
+                    <p><i class="icofont-bathtub"></i> 2.5 baths</p>
+                </div>
+            </div>
+
+            <div class="house-listing">
+                <button class="arrow prev two">&lt;</button>
+                <img src="./figure/h2/processed-5C3587E3-C5CA-437E-BF85-80BA0398BD26-7BD9E063-F393-475C-85F1-C5F3EA55B15D.jpeg"
+                    alt="House 2" class="house-img two">
+                <button class="arrow next two">&gt;</button>
+                <div class="house-details">
+                    <h3>Wild Ginger Ave Waterloo</h3>
+                    <p><i class="icofont-bed"></i> X beds</p>
+                    <p><i class="icofont-bathtub"></i> 3.5 baths</p>
+                </div>
+            </div>
+
+            <div class="house-listing">
+                <button class="arrow prev three">&lt;</button>
+                <img src="./figure/h3/WechatIMG11384.jpg" alt="House 3" class="house-img three">
+                <button class="arrow next three">&gt;</button>
+                <div class="house-details">
+                    <h3>Icon 330 Phillip St Waterloo</h3>
+                    <p><i class="icofont-bed"></i> X beds</p>
+                    <p><i class="icofont-bathtub"></i> 1 bath</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        //gloabl varibales (three lists of images)
+        //this is list img of house 1
+        var images1 = ["figure\\h1\\original-01C9FA1D-91F9-4A41-B680-E11F83EEA5E4.jpeg",
+            "figure\\h1\\original-1D725CED-3D83-4E7E-9739-98152CA427AD.jpeg",
+            "figure\\h1\\original-49E4C3CD-55F9-47BC-8587-5C76FC1DBA55.jpeg",
+            "figure\\h1\\original-58CB9F3A-6F0C-401B-AB75-980CF29F0AF6.jpeg",
+            "figure\\h1\\original-438D518D-4C4C-459F-9CDE-14CE549E5EFA.jpeg",
+            "figure\\h1\\original-24092971-7E84-43F1-ABD2-CD5C17665B21.jpeg",
+            "figure\\h1\\original-CF14BF28-6549-4D7A-AE6B-66AA20919D7A.jpeg",
+            "figure\\h1\\original-F509F990-8565-41E5-8649-961BFD3CE9A9.jpeg",
+            "figure\\h1\\original-BF9EA5ED-4E0C-4CF4-893D-56CC1C659778.jpeg"];
+        //this is list of img of house 2
+        var images2 = [
+            "figure\\h2\\processed-5C3587E3-C5CA-437E-BF85-80BA0398BD26-7BD9E063-F393-475C-85F1-C5F3EA55B15D.jpeg",
+            "figure\\h2\\processed-4ECE142D-4FF3-47A0-848D-1D01159D328A-D139A8F0-3207-45AD-9B33-38AD4C442393.jpeg",
+            "figure\\h2\\processed-23B09C3E-35A5-44BF-B42D-DB5393420F4D-B1CB0C23-663A-4A7A-B9A1-74F7471E0002.jpeg",
+            "figure\\h2\\processed-95E6A55D-C032-420E-8E5C-BF4CB7235E64-7A4F6134-941A-4C42-9179-D9168A224A01.jpeg",
+            "figure\\h2\\processed-1265C43C-50B6-4605-8783-BECC49BDAF0B-C2CA0D79-E4ED-4A12-9A3F-FEB2C5905612.jpeg",
+            "figure\\h2\\processed-74283EE3-0B18-4CF8-837A-97D7BA9EFE03-48EF33A6-70B3-4B27-89DA-A78FA8311903.jpeg",
+            "figure\\h2\\processed-71891442-A96C-4928-9F78-A46DECD87C49-51550DB5-0DB3-47BD-926C-21F86F55CC7E.jpeg",
+            "figure\\h2\\processed-77899689-6B0E-45EA-9360-A6AB27888339-6E11A49A-399F-4EB7-BC3A-326F00611A38.jpeg",
+            "figure\\h2\\processed-C09DCC02-CA36-4BE0-A60E-02DDE73017E2-FC093F7C-8E37-48EC-B145-B330F32815BA.jpeg"];
+
+        var images3 = ["figure\\h3\\WechatIMG11384.jpg",
+            "figure\\h3\\WechatIMG4633.jpg",
+            "figure\\h3\\WechatIMG4634.jpg",
+            "figure\\h3\\WechatIMG4635.jpg"];
+
+        var index1 = 0; // this is index for house 1
+        var index2 = 0; // this is index for house 2
+        var index3 = 0; // this is index for house 3
+
+        function switchImage(direction, n) {
+            // Determine which index and images array to use
+            let index = (n === 1) ? index1 : (n === 2) ? index2 : index3;
+            let images = (n === 1) ? images1 : (n === 2) ? images2 : images3;
+
+            // Change image
+            if (direction === 'next') {
+                index = (index + 1) % images.length; // Go to the next image or wrap around
+            } else if (direction === 'prev') {
+                index = (index - 1 + images.length) % images.length; // Go to the previous image or wrap around
+            }
+
+            // Select the specific .house-img element for this set of images
+            var imgElement;
+            if (n === 1) {
+                imgElement = document.querySelector('.house-img.one');
+            } else if (n === 2) {
+                imgElement = document.querySelector('.house-img.two');
+            } else {
+                imgElement = document.querySelector('.house-img.three');
+            }
+            imgElement.src = images[index]; // Update the src of the image element
+            imgElement.alt = `Image ${index + 1}`; // Update the alt text
+
+            // Update the global index for the correct house
+            if (n === 1) {
+                index1 = index;
+            } else if (n === 2) {
+                index2 = index;
+            } else {
+                index3 = index;
+            }
+        }
+
+        // Event listeners for the arrows, passing the correct house number
+        document.querySelector('.arrow.next.one').addEventListener('click', function () {
+            switchImage('next', 1);
+        });
+
+        document.querySelector('.arrow.prev.one').addEventListener('click', function () {
+            switchImage('prev', 1);
+        });
+
+        document.querySelector('.arrow.next.two').addEventListener('click', function () {
+            switchImage('next', 2);
+        });
+
+        document.querySelector('.arrow.prev.two').addEventListener('click', function () {
+            switchImage('prev', 2);
+        });
+        document.querySelector('.arrow.next.three').addEventListener('click', function () {
+            switchImage('next', 3);
+        });
+
+        document.querySelector('.arrow.prev.three').addEventListener('click', function () {
+            switchImage('prev', 3);
+        });
+    </script>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We simplify the journey of finding your home. Reach out to us, and our team will be dedicated to matching you
+            with not just any home, but the right one for you. Our diverse portfolio includes apartments, condos,
+            single-family homes, semi-detached houses, townhouses, executive suites, and bachelor apartments, offering a
+            wide selection to meet your specific needs.
+            We are committed to finding a home that aligns with your lifestyle, considering all the amenities and
+            features important to you. For more information about any of our properties, or if you're a homeowner
+            interested in our management services, please contact us through any of the methods listed below. We welcome
+            both potential renters and property owners.</p>
+        <p><b>Our Team</b></p>    
+        <div class="team-container">
+            <div class="team-member">
+                <img src="./figure/team/default.jpg" alt="Team Member 1">
+                <h3>Jianzhong Lin</h3>
+                <p>Founder and President</p>
+            </div>
+            <div class="team-member">
+                <img src="./figure/team/default.jpg" alt="Team Member 2">
+                <h3>Changen Lin</h3>
+                <p>Chief Administrative Officer</p>
+            </div>
+            <div class="team-member">
+                <img src="./figure/team/default.jpg" alt="Team Member 3">
+                <h3>Shanshan Lin</h3>
+                <p>Head of Investment</p>
+            </div>
+            <div class="team-member">
+                <img src="./figure/team/default.jpg" alt="Team Member 3">
+                <h3>Xiong Guo</h3>
+                <p>Human Resourses</p>
+            </div>
+            <div class="team-member">
+                <img src="./figure/team/default.jpg" alt="Team Member 4">
+                <h3>Milan</h3>
+                <p>Inspection Support</p>
+            </div>
+        </div>            
+    </section>    
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p><i class="icofont-duotone icofont-phone"></i>Phone: +1 (519) 444-4458</p>
+        <p><i class="icofont-email"></i>Email: serinahlin8@gmail.com</p>
+    </section>
+</body>
+
+</html>
